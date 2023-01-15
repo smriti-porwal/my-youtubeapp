@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import HeaderComponent from "./Components/header-component";
+import BodyComponent from "./Components/body-component";
+import NavPanel from "./Components/nav-panel";
+import { useSelector } from "react-redux";
 
 function App() {
+  const toggleSlice = useSelector((state) => state.navToggleSlice.toggleNav);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <HeaderComponent />
+      </div>
+      <div className="grid grid-flow-col grid-cols-12">
+        {toggleSlice && <NavPanel />}
+        <BodyComponent />
+      </div>
+    </>
   );
 }
 
