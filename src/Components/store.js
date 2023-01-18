@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import navToggleSlice from "./navtoggle-slice";
+import videodataSlice from "./videodata-slice";
 
 const store = configureStore({
     reducer: {
-        navToggleSlice: navToggleSlice
+        navToggleSlice: navToggleSlice,
+        videoDataSlice: videodataSlice
     }
 })
 
