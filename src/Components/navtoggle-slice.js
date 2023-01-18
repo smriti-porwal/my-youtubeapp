@@ -9,7 +9,10 @@ const navToggleSlice = createSlice({
     toggleNav: (state) => {
       state.toggleNav = !state.toggleNav;
     },
+    hideNav: (state) => {
+      state.toggleNav = false;
+    }
   },
 });
-export const { toggleNav } = navToggleSlice.actions;
+export const { toggleNav, hideNav } = navToggleSlice.actions;
 export default navToggleSlice.reducer;

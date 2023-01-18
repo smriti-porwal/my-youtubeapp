@@ -3,9 +3,22 @@ import BodyComponent from "./Components/body-component";
 import NavPanel from "./Components/nav-panel";
 import { useSelector } from "react-redux";
 import  FootetComponent from "./Components/footer-component";
+import VideoComponent from "./Components/Watch/video-component";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const toggleSlice = useSelector((state) => state.navToggleSlice.toggleNav);
+  const route = [
+    {
+      path: "/",
+      element: <BodyComponent />,
+    },
+    {
+      path: "/watch",
+      element: <VideoComponent />
+    },
+  ];
+  const router = createBrowserRouter(route);
   return (
     <>
       <div>
@@ -13,7 +26,7 @@ function App() {
       </div>
       <div className="grid grid-flow-col grid-cols-12">
         {toggleSlice && <NavPanel />}
-        <BodyComponent />
+        <RouterProvider router={router} /> 
       </div>
       <div>
       <FootetComponent />
