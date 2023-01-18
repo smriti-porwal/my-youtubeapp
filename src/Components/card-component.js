@@ -6,7 +6,7 @@ const CardComponent = ({ data }) => {
   const { thumbnails, channelTitle, title } = snippet;
   return (
     <div className="flex flex-col w-72 m-7 p-1 shadow-lg">
-      <Link to={`watch/${id}`}>
+      <Link to={`watch?v=${id}`}>
         <div>
           <img
             className="w-96 h-40"

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { hideNav } from "../navtoggle-slice";
 import LivechatComponent from "./livechat-component";
 import VideoContainer from "./video-container";
-import NeastedComponent from "./nested-comments";
+import CommentSectionComponent from "./comments-section";
 
 const VideoComponent = () => {
   const dispatch = useDispatch();
@@ -16,8 +16,8 @@ const VideoComponent = () => {
         <VideoContainer />
         <LivechatComponent />
       </div>
-      <div>
-        <NeastedComponent />
+      <div className="w-[95rem]">
+        <CommentSectionComponent />
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ function App() {
       element: <BodyComponent />,
     },
     {
-      path: "watch/:id",
+      path: "/watch",
       element: <VideoComponent />
     },
   ];
