@@ -16,7 +16,7 @@ const VideoComponent = () => {
         <VideoContainer />
         <LivechatComponent />
       </div>
-      <div className="w-[95rem]">
+      <div>
         <CommentSectionComponent />
       </div>
     </div>
