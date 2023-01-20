@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import hamburger from "../Assets/Icons/hamburger.png";
 import YoutubeLogo from "../Assets/Icons/YoutubeLogo.png";
 import userIcon from "../Assets/Icons/userIcon.png";
 import { useDispatch } from "react-redux";
 import { toggleNav } from "./navtoggle-slice";
+import Search from './search';
 
 const HeaderComponent = () => {
-  const { searchText, setSearchText } = useState("");
   const dispatch = useDispatch();
   return (
     <div className="grid grid-flow-col grid-cols-12">
@@ -17,16 +17,7 @@ const HeaderComponent = () => {
         <img src={YoutubeLogo} alt="youtube"></img>
       </div>
       <div className="p-2 m-2 col-span-7">
-        <form>
-          <input className="border border-black rounded-md w-full p-2 h-7"
-            type="text"
-            value={searchText}
-            placeholder="Search anything here..."
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          ></input>
-        </form>
+       <Search />
       </div>
       <div className="w-10 p-2 m-2 col-span-2 col-start-12">
         <img src={userIcon} alt="user-icon"></img>
