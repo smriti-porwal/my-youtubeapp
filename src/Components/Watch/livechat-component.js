@@ -6,7 +6,10 @@ const LivechatComponent = () => {
   useEffect(() => {
     let interval = setInterval(() => {
       let chat = `${generateString(5)}: ${generateString(15)}`;
-      setMessage((message) => [chat, ...message]);
+      setMessage((message) => {
+        message.splice(20, 1);
+        return [chat, ...message]
+      });
     }, 1000);
 
     return () => {
